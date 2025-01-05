@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(clap_plugin_example)
+project(clap_plugin_example VERSION 0.1.0 LANGUAGES C CXX)
 
 set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH}" "${PROJECT_SOURCE_DIR}/cmake")
 
@@ -37,5 +37,5 @@ target_sources(clap_plugin_test
 target_include_directories(clap_plugin_test
  PRIVATE
 )
-target_link_libraries(clap_plugin_test
-)
+target_compile_definitions(clap_plugin_test PUBLIC LIN=1)
+target_link_libraries(clap_plugin_test PUBLIC -ldl)
