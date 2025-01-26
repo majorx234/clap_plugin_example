@@ -12,3 +12,5 @@
   - https://www.youtube.com/watch?v=oko5xJDY39E
 - GUI with ImGUI:
   - https://github.com/schwaaa/clap-imgui
+- another CLAP tutorial:
+  - https://nakst.gitlab.io/tutorial/clap-part-1.html
