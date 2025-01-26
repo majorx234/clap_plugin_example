@@ -1,3 +1,4 @@
+#include <clap/ext/params.h>
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -121,8 +122,18 @@ bool echo_plugin_state_load(const clap_plugin_t *plugin, const clap_istream_t *s
 }
 
 static const clap_plugin_state_t s_echo_plugin_state = {
-   .save = echo_plugin_state_save,
-   .load = echo_plugin_state_load,
+    .save = echo_plugin_state_save,
+    .load = echo_plugin_state_load,
+};
+
+static const clap_plugin_params_t s_echo_plugin_params = {
+  // TODO create functions
+  .count = NULL,
+  .flush = NULL,
+  .get_info = NULL,
+  .get_value = NULL,
+  .text_to_value = NULL,
+  .value_to_text = NULL
 };
 
 /////////////////
@@ -282,6 +293,8 @@ static const void *echo_plugin_get_extension(const struct clap_plugin *plugin, c
     return &s_echo_plugin_note_ports;
   if (!strcmp(id, CLAP_EXT_STATE))
     return &s_echo_plugin_state;
+  if (!strcmp(id, CLAP_EXT_PARAMS))
+    return &s_echo_plugin_params;
   // TODO: add support to CLAP_EXT_PARAMS
   return NULL;
 }
