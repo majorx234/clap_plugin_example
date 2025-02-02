@@ -32,7 +32,7 @@ typedef struct {
   const clap_host_log_t          *host_log;
   const clap_host_thread_check_t *host_thread_check;
   const clap_host_state_t        *host_state;
-
+  const float                    *clap_delay_data;
   uint32_t latency;
 } echo_plugin_t;
 
